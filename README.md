@@ -1,6 +1,6 @@
-# Perplexity App Clone
+# InquireAI - Intelligent RAG-Powered Search Assistant
 
-This repository contains the implementation of a Perplexity app clone using **Flutter**, **Tavily API**, and **Gemini API**. The application mimics the functionality of a Perplexity-like search assistant, providing accurate and concise answers based on web searches and LLM (Large Language Model) responses.
+InquireAI is a sophisticated search assistant application that combines the power of web search, intelligent content ranking, and large language models to deliver precise, contextual answers to user queries. Built with Flutter and powered by cutting-edge APIs, it provides a Perplexity-like experience with real-time chat functionality.
 ## FlowChart
 ![Flow Diagram](screenshots/flowchart.png)
 ## Screenshot
@@ -10,41 +10,68 @@ This repository contains the implementation of a Perplexity app clone using **Fl
 
 ## Features
 
-1. **Web Search Integration:** Searches the web for relevant information using Tavily API.
-2. **Content Ranking:** Implements a similarity-based ranking mechanism for retrieved sources.
-3. **LLM Response Generation:** Generates detailed and context-aware responses using Gemini API.
+**Intelligent Web Search**
+- Leverages Tavily API for comprehensive web content retrieval
+- Fetches relevant sources from across the internet in real-time
+
+**Smart Content Ranking**
+- Advanced similarity-based ranking using sentence transformers
+- Vector embeddings and cosine similarity calculations
+- Prioritizes most relevant sources for accurate responses
+
+**AI-Powered Response Generation**
+- Utilizes Gemini API for contextual, coherent answer generation
+- Synthesizes information from multiple ranked sources
+- Delivers concise, well-structured responses
+
+**Real-Time Communication**
+- WebSocket integration for instant chat functionality
+- Seamless client-server communication
+- Responsive user experience
 
 ---
 
 ## Architecture Overview
 
-The backend logic of the app is structured into three main steps:
 
-### Step 1: Search the Web
-- **Objective:** Retrieve relevant web sources for the given query.
-- **API Used:** Tavily API.
+InquireAI follows a three-stage RAG (Retrieval-Augmented Generation) pipeline:
 
-### Step 2: Source Ranking
-- **Objective:** Sort the retrieved sources based on their relevance to the query.
-- **Methodology:**
-  - Perform a similarity search between the query and search results.
-  - Convert both the query and search result texts into high-dimensional vectors using a sentence transformer.
-  - Calculate cosine similarity between the vectors.
-  - Rank sources based on their similarity scores (higher similarity = higher rank).
+### Step 1: Information Retrieval
+- **Web Search**: Query processing through Tavily API
+- **Content Extraction**: Retrieval of relevant web sources and snippets
+- **Data Preprocessing**: Clean and structure retrieved content
 
-### Step 3: Response Generation
-- **Objective:** Generate a detailed and coherent response using the top-ranked sources.
-- **API Used:** Gemini API.
+### Step 2: Content Ranking & Selection
+- **Vector Embedding**: Convert queries and content to high-dimensional vectors
+- **Similarity Calculation**: Compute cosine similarity scores
+- **Source Ranking**: Order sources by relevance to user query
+- **Top-K Selection**: Select highest-ranking sources for response generation
 
+### Step 3: Response Synthesis
+- **Context Assembly**: Combine top-ranked sources with user query
+- **LLM Processing**: Generate response using Gemini API
+- **Response Optimization**: Ensure coherence and accuracy
+- **Real-time Delivery**: Stream response to user via WebSocket
 ---
 
 ## Technologies Used
 
-1. **Flutter:** For building the frontend of the application.
-2. **Tavily API:** To perform web searches and fetch relevant results.
-3. **Gemini API:** For leveraging LLM capabilities to generate responses.
-4. **Sentence Transformers:** To perform similarity searches using vector embeddings.
-5. **WebSocket**: For real-time chat functionality and communication between client and server.
+
+**Frontend**
+- Flutter - Cross-platform mobile development
+- WebSocket Client - Real-time communication
+
+**Backend APIs**
+- Tavily API - Web search and content retrieval
+- Gemini API - Large language model for response generation
+
+**AI/ML Components**
+- Sentence Transformers - Text vectorization
+- Cosine Similarity - Content ranking algorithm
+- Vector Embeddings - Semantic similarity computation
+
+**Communication**
+- WebSocket Protocol - Real-time bidirectional communication
 ---
 
 ## Installation
