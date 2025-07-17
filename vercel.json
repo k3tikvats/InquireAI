@@ -6,10 +6,10 @@
   "outputDirectory": "build/web",
   "installCommand": "flutter pub get",
   "framework": null,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
