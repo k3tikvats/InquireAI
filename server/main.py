@@ -19,6 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Health check endpoint
+@app.get("/")
+def root():
+    return {"message": "InquireAI Backend is running!", "status": "healthy"}
+
 # @app.get("/")
 # def hello_world():
 #     return "Hello World"#whatever we return over here will be the return value for when the user reaches the forward slash route

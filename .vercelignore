@@ -1,4 +1,5 @@
 # Flutter
+
 .dart_tool/
 .packages
 .pub/
@@ -8,6 +9,7 @@
 .flutter-plugins-dependencies
 
 # Build outputs
+
 android/
 ios/
 linux/
@@ -16,31 +18,38 @@ windows/
 test/
 
 # Server files
+
 server/
 screenshots/
 
 # IDE
+
 .vscode/
 .idea/
-*.iml
+\*.iml
 
 # OS
+
 .DS_Store
 Thumbs.db
 
 # Git
+
 .git/
 .gitignore
 
 # Documentation
+
 README.md
 DEPLOYMENT.md
-*.md
+\*.md
 
 # Scripts
-*.bat
-*.sh
+
+_.bat
+_.sh
 
 # Docker
+
 docker-compose.yml
 Dockerfile
