@@ -1,0 +1,30 @@
+{
+  "github": {
+    "silent": true
+  },
+  "buildCommand": "flutter build web --release --web-renderer html",
+  "outputDirectory": "build/web",
+  "installCommand": "flutter pub get",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    }
+  ]
+}

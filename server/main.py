@@ -1,5 +1,6 @@
 import asyncio
 from fastapi import FastAPI, WebSocket
+from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic_models.chat_body import ChatBody
 from services.llm_service import LLMService
@@ -8,6 +9,15 @@ from services.search_service import SearchService
 
 app=FastAPI()#it searches for this word app and then it will create an instance of the FastAPI class and then it will be used to define the routes
 #if named other variable rather than app then it gives error
+
+# Add CORS middleware for production deployment
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Configure this properly for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # @app.get("/")
 # def hello_world():
