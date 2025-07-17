@@ -2,8 +2,10 @@ services:
   - type: web
     name: perplexity-clone-api
     env: python
+    repo: https://github.com/k3tikvats/perplexity_clone.git
+    rootDir: server
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "cd server && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: TAVILY_API_KEY
         sync: false
