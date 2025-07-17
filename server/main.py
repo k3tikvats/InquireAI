@@ -21,6 +21,7 @@ app.add_middleware(
 
 # Health check endpoint
 @app.get("/")
+@app.head("/")
 def root():
     return {"message": "InquireAI Backend is running!", "status": "healthy"}
 
